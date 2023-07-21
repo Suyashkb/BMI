@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="calculate_bmi_button">Calculate BMI</string>
+    <string name="your_age">Your Age</string>
+    <string name="your_weight_kgs">Your Weight(kgs)</string>
+    <string name="your_height_cms">Your Height</string>
+    <string name="enter_height">Enter Height</string>
+    <string name="enter_weight">Enter Weight</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="cms_inches">Cms/inches</string>
+    <string name="bmi_result_text">Your Body Mass Index is :</string>
+    <string name="bmi_result">BMI</string>
+</resources>
