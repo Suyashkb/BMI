@@ -1,9 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+
     <style name="Base.Theme.BMICalculator" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+        <item name="android:windowBackground">@color/pink_up</item>
 
+        <!-- Base application theme. -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/pink1</item>
+        <item name="colorPrimaryVariant">@color/pink_up</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        </style>
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     <style name="Theme.BMICalculator" parent="Base.Theme.BMICalculator" />
 </resources>

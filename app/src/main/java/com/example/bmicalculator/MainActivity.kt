@@ -23,11 +23,12 @@ class MainActivity() : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.resultButon.setOnClickListener { chk_age()}
+        binding.resultButton.setOnClickListener { chk_age()}
+
 
         }
     fun chk_age(){
-        val age_var = binding.userAge.text.toString()
+        val age_var = binding.userAge.editText?.text.toString()
         val age = age_var.toIntOrNull()
         if (age != null) {
             if (age <= 3){
@@ -41,9 +42,9 @@ class MainActivity() : AppCompatActivity() {
 
 
     fun calc_bmi() = try {
-        val heightvar = binding.userHeight.text.toString()
+        val heightvar = binding.userHeight.editText?.text.toString()
         val height = heightvar.toDoubleOrNull()
-        val weightvar = binding.userWeight.text.toString()
+        val weightvar = binding.userWeight.editText?.text.toString()
         val weight = weightvar.toDoubleOrNull()
         //if switch in cms
         val heightm = height?.div(100)

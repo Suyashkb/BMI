@@ -7,7 +7,9 @@
     <string name="enter_height">Enter Height</string>
     <string name="enter_weight">Enter Weight</string>
     <string name="enter_age">Enter Age</string>
-    <string name="cms_inches">Cms/inches</string>
+    <string name="cms_inches">Cms/Inches</string>
     <string name="bmi_result_text">Your Body Mass Index is :</string>
     <string name="bmi_result">BMI</string>
+    <string name="check_your_bmi_desc">Check your BMI</string>
+    <string name="this_button_calculates_bmi">This button calculates BMI</string>
 </resources>
