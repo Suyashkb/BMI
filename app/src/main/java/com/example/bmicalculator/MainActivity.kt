@@ -23,17 +23,22 @@ class MainActivity() : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.resultButon.setOnClickListener { chk_age()}
+
+        }
+    fun chk_age(){
         val age_var = binding.userAge.text.toString()
         val age = age_var.toIntOrNull()
-
         if (age != null) {
-            if (age <= 3) {
+            if (age <= 3){
                 age_toast()
-            } else {
-                binding.resultButon.setOnClickListener { calc_bmi() }
+            }else{
+                calc_bmi()
             }
         }
     }
+
+
 
     fun calc_bmi() = try {
         val heightvar = binding.userHeight.text.toString()
@@ -72,7 +77,7 @@ class MainActivity() : AppCompatActivity() {
                     in 28.0..30.0 -> binding.seekBar.progress = 7
                     in 30.0..31.0 -> binding.seekBar.progress = 8
                     in 31.0..33.0 -> binding.seekBar.progress = 9
-                    in 33.0..35.0 -> binding.seekBar.progress = 10
+                    in 33.0..40.0 -> binding.seekBar.progress = 10
                     else -> {
                         binding.seekBar.progress = Int.MIN_VALUE
                     }
