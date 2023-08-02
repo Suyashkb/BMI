@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="2dp">
 
 
     <!--Given below the three textviews are for the user guidance for in put of age, height
@@ -40,7 +41,7 @@
 
     <!--This switch given below is for user to change the height input into cms/inches-->
 
-    <Switch
+    <!--Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
@@ -51,7 +52,20 @@
         app:layout_constraintBottom_toTopOf="@+id/user_weight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/user_height"
-        app:layout_constraintTop_toBottomOf="@+id/user_age" />
+        app:layout_constraintTop_toBottomOf="@+id/user_age" /-->
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switch1"
+        android:layout_width="127dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:elegantTextHeight="true"
+        android:text="@string/cms_inches"
+        app:layout_constraintBottom_toTopOf="@+id/user_weight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/user_height"
+        app:layout_constraintTop_toBottomOf="@+id/user_age"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -81,10 +95,10 @@
         app:layout_constraintTop_toTopOf="parent" /-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/user_height"
-        android:layout_width="100dp"
+        android:layout_width="95dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
-        android:layout_marginEnd="132dp"
+        android:layout_marginEnd="137dp"
         android:hint="@string/your_height_cms"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

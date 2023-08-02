@@ -1,15 +1,9 @@
 package com.example.bmicalculator
 
-import android.app.Application
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
-import android.widget.SeekBar
 import android.widget.Toast
 import com.example.bmicalculator.databinding.ActivityMainBinding
-import java.security.AccessControlContext
-import java.security.AccessController.getContext
 
 
 class MainActivity() : AppCompatActivity() {
@@ -47,11 +41,24 @@ class MainActivity() : AppCompatActivity() {
         val weightvar = binding.userWeight.editText?.text.toString()
         val weight = weightvar.toDoubleOrNull()
         //if switch in cms
-        val heightm = height?.div(100)
-        //if switch in inches
-        //val height_m = height?.div(0.0254)
+        val switch_ci: Boolean = binding.switch1.isChecked
+
+        if (switch_ci) {
+            val heightm = height?.times(0.0254)
+            bmi(weight,heightm)
+        }else {
+            val heightm = height?.div(100)
+            bmi(weight,heightm)
+        }
+
         //val bmi: Double? = height_m?.times(height_m)?.let { weight?.div(it) }
         //val bmi: Double? = weight?.div(height_m?.times(height_m?))
+    }catch (e: NumberFormatException) {
+        toasty("Enter valid Height or Weight")
+    }
+
+    fun bmi(weight: Double?, heightm:Double?){
+
         val bmi: Double? = weight?.div(heightm?.times(heightm)!!)
 
         when (bmi!!) {
@@ -63,12 +70,12 @@ class MainActivity() : AppCompatActivity() {
             }
             //toast_fun defined later
             else -> {
-                val formattedbmi = String.format("%2f", bmi)
-                binding.bmiResult.text = bmi.toString()
-                val intbmi = formattedbmi.toDouble()
+                val formattedbmi = String.format("%.2f", bmi).toDouble()
+                binding.bmiResult.text = formattedbmi.toString()
+                //val intbmi = formattedbmi.toDouble()
 
                 //seekbar code block
-                when (intbmi) {
+                when (formattedbmi) {
                     in 3.0..5.0 -> binding.seekBar.progress = 1
                     in 5.0..9.0 -> binding.seekBar.progress = 2
                     in 9.0..12.0 -> binding.seekBar.progress = 3
@@ -85,8 +92,6 @@ class MainActivity() : AppCompatActivity() {
                 }
             }
         }
-    } catch (e: NumberFormatException) {
-        toasty("Enter valid height or Weight")
     }
 
     fun toasty(message: String){

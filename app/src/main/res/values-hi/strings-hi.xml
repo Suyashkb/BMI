@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">बीएमआई कैलकुलेटर</string>
+    <string name="calculate_bmi_button">बीएमआई की गणना करें</string>
+    <string name="your_age">आपकी उम्र</string>
+    <string name="your_weight_kgs">आपका वजन (किलो)</string>
+    <string name="your_height_cms">आपकी ऊंचाई</string>
+    <string name="enter_height">आपकी ऊंचाई</string>
+    <string name="enter_weight">आपका वजन</string>
+    <string name="enter_age">आपकी उम्र</string>
+    <string name="cms_inches">Cms/Inches</string>
+    <string name="bmi_result_text">आपका बॉडी मास इंडेक्स है</string>
+    <string name="bmi_result">BMI</string>
+    <string name="check_your_bmi_desc">अपना बीएमआई जांचें</string>
+    <string name="this_button_calculates_bmi">यह बटन बीएमआई की गणना करता है</string>
+</resources>
