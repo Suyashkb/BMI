@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="2dp">
+    android:padding="2dp"
+    android:background="@color/design_default_color_on_primary">
 
 
     <!--Given below the three textviews are for the user guidance for in put of age, height
@@ -103,7 +104,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/pink_up2">
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -133,7 +134,6 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/pink_up2"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -162,8 +162,7 @@
         android:hint="@string/your_age"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/pink_up2">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -178,11 +177,12 @@
 
     <!--this textview below creates the bmi text value-->
 
+    <!--this text view given below is for the display of the reslut bmi-->
+
     <TextView
         android:id="@+id/result_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_width="278dp"
+        android:layout_height="35dp"
         android:text="@string/bmi_result_text"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/bmi_result"
@@ -190,13 +190,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result_button"
         tools:ignore="InvalidId" />
-    <!--this text view given below is for the display of the reslut bmi-->
 
     <TextView
         android:id="@+id/bmi_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/bmi_result"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
@@ -204,18 +203,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!--This is a progress bar for seeking the bmi on a meter-->
-
-    <SeekBar
-        android:id="@+id/seekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="204dp"
-        android:layout_height="51dp"
-        android:max="10"
-        android:progress="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result_button" />
 
     <!--Button
         android:id="@+id/result_buton"
@@ -226,22 +213,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" /-->
-    <Button
-        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
-        android:id="@+id/result_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculate_bmi_button"
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="204dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="225dp"
+        android:max="10"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/result_button"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
         android:backgroundTint="@color/pink1"
+        android:elevation="60dp"
+        android:text="@string/calculate_bmi_button"
         android:textColor="@color/pink_up"
-        android:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
 
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <HorizontalScrollView
+        android:id="@+id/dietTipsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/dietTipsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!-- Add ImageView elements for diet tips -->
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/diet_tip_1" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/diet_tip_2" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/diet_tip_2" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

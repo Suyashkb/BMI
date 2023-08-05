@@ -12,4 +12,6 @@
     <string name="bmi_result">BMI</string>
     <string name="check_your_bmi_desc">Check your BMI</string>
     <string name="this_button_calculates_bmi">This button calculates BMI</string>
+    <string name="diet_tip_1">Diet Tip 1</string>
+    <string name="diet_tip_2">Diet Tip 2</string>
 </resources>
