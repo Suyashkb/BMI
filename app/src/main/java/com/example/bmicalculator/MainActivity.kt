@@ -97,8 +97,41 @@ class MainActivity() : AppCompatActivity() {
                 }
 
 
+
                 binding.bmiResult.text = formattedbmi.toString()
                 //val intbmi = formattedbmi.toDouble()
+                when(bmiCategory){
+                    1->{
+                        //add underweight diet tip images
+                        //dice_1 and dice_2 are  tips images
+                        val image1=findViewById<ImageView>(R.id.img1)
+                        val diet_image1=R.drawable.dice_1
+                        image1.setImageResource(diet_image1)
+                        val image2=findViewById<ImageView>(R.id.img2)
+                        val diet_image2=R.drawable.dice_2
+                        image2.setImageResource(diet_image2)
+                    }
+                    2->{
+                        //add normal weight diet tips
+                        //dice_2 and dice_3 are tips images
+                        val image1=findViewById<ImageView>(R.id.img1)
+                        val diet_image1=R.drawable.dice_2
+                        image1.setImageResource(diet_image1)
+                        val image2=findViewById<ImageView>(R.id.img2)
+                        val diet_image2=R.drawable.dice_3
+                        image2.setImageResource(diet_image2)
+                    }
+                    3->{
+                        //add overweight diet tips
+                        //dice_3 and dice_4 are tips images
+                        val image1=findViewById<ImageView>(R.id.img1)
+                        val diet_image1=R.drawable.dice_3
+                        image1.setImageResource(diet_image1)
+                        val image2=findViewById<ImageView>(R.id.img2)
+                        val diet_image2=R.drawable.dice_4
+                        image2.setImageResource(diet_image2)
+                    }
+                }
 
 
                 val dietImagesUnderweight = listOf(
@@ -126,11 +159,14 @@ class MainActivity() : AppCompatActivity() {
                     }
                     binding.dietTipsLayout.removeAllViews()
 
+
                     // Add new ImageViews for diet tips
+                    // Add list of suitable images for diet chart
                     dietImages.forEach { imageResource ->
                         val imageView = ImageView(this)
                         imageView.setImageResource(imageResource)
                         binding.dietTipsLayout.addView(dietImages)
+
                     }
 
 
@@ -172,8 +208,6 @@ class MainActivity() : AppCompatActivity() {
         ).show()
     }
 }
-
 private fun LinearLayout.addView(dietImages: List<Int>) {
-
 
 }
