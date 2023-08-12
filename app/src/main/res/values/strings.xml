@@ -29,4 +29,6 @@
     <string name="Name">Name</string>
     <string name="Age">Age</string>
     <string name="Gender">Gender</string>
+    <string name="diet_tip_1">Diet Tip 1</string>
+    <string name="diet_tip_2">Diet Tip 2</string>
 </resources>

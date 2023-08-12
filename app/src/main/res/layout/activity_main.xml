@@ -259,6 +259,7 @@
             android:orientation="horizontal">
 
             <!-- Add ImageView elements for diet tips -->
+            <!--Image view for diet tip images-->
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="150dp"
@@ -266,17 +267,22 @@
                 android:contentDescription="@string/diet_tip_1" />
 
             <ImageView
+                app:srcCompat="@drawable/diet_chart"
+                android:contentDescription="@string/diet_tip_1" />
+
+            <ImageView
+                android:id="@+id/img1"
                 android:layout_width="200dp"
                 android:layout_height="150dp"
                 android:layout_margin="8dp"
                 android:contentDescription="@string/diet_tip_2" />
 
             <ImageView
+                android:id="@+id/img2"
                 android:layout_width="200dp"
                 android:layout_height="150dp"
                 android:layout_margin="8dp"
                 android:contentDescription="@string/diet_tip_2" />
-
 
         </LinearLayout>
     </HorizontalScrollView>
